@@ -18,6 +18,7 @@
 		9352988120871FA500B8CE46 /* LKMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352988020871FA500B8CE46 /* LKMineViewController.m */; };
 		935298862087368D00B8CE46 /* SCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935298852087368D00B8CE46 /* SCBaseViewController.m */; };
 		93529889208738AE00B8CE46 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93529888208738AE00B8CE46 /* BaseViewController.m */; };
+		93692B9720899B9B00E6C098 /* IMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93692B9620899B9B00E6C098 /* IMDataSource.m */; };
 		93ABBA222085E20200F1092D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBA212085E20200F1092D /* AppDelegate.m */; };
 		93ABBA252085E20200F1092D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBA242085E20200F1092D /* ViewController.m */; };
 		93ABBA282085E20200F1092D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ABBA262085E20200F1092D /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		935298852087368D00B8CE46 /* SCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBaseViewController.m; sourceTree = "<group>"; };
 		93529887208738AE00B8CE46 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		93529888208738AE00B8CE46 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		93692B9520899B9B00E6C098 /* IMDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMDataSource.h; sourceTree = "<group>"; };
+		93692B9620899B9B00E6C098 /* IMDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMDataSource.m; sourceTree = "<group>"; };
 		93ABBA1D2085E20200F1092D /* Link.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Link.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93ABBA202085E20200F1092D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93ABBA212085E20200F1092D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				934D19BB208832FF0023A555 /* KxMenu.m */,
 				934D19C3208841670023A555 /* LKSessionViewController.h */,
 				934D19C4208841670023A555 /* LKSessionViewController.m */,
+				93692B9520899B9B00E6C098 /* IMDataSource.h */,
+				93692B9620899B9B00E6C098 /* IMDataSource.m */,
 				93529882208734EF00B8CE46 /* Tools */,
 				935298712086E7DC00B8CE46 /* Define */,
 			);
@@ -337,6 +342,7 @@
 				935298652086CEF700B8CE46 /* SCNetwork.m in Sources */,
 				9352986A2086D9A000B8CE46 /* LKTabBarController.m in Sources */,
 				9352987E20871F8D00B8CE46 /* LKConnecterViewController.m in Sources */,
+				93692B9720899B9B00E6C098 /* IMDataSource.m in Sources */,
 				934D19C5208841670023A555 /* LKSessionViewController.m in Sources */,
 				934D19BC208832FF0023A555 /* KxMenu.m in Sources */,
 				93ABBA222085E20200F1092D /* AppDelegate.m in Sources */,
