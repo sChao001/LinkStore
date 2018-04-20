@@ -7,15 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		934D19BC208832FF0023A555 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 934D19BB208832FF0023A555 /* KxMenu.m */; };
+		934D19C220883A100023A555 /* UIImage+SCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 934D19C120883A100023A555 /* UIImage+SCImage.m */; };
+		934D19C5208841670023A555 /* LKSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 934D19C4208841670023A555 /* LKSessionViewController.m */; };
+		935298652086CEF700B8CE46 /* SCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 935298642086CEF700B8CE46 /* SCNetwork.m */; };
+		9352986A2086D9A000B8CE46 /* LKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935298692086D9A000B8CE46 /* LKTabBarController.m */; };
+		935298782086EEBC00B8CE46 /* LKMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935298772086EEBC00B8CE46 /* LKMessageListController.m */; };
+		9352987B20871F3100B8CE46 /* LKinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352987A20871F3100B8CE46 /* LKinfoViewController.m */; };
+		9352987E20871F8D00B8CE46 /* LKConnecterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352987D20871F8D00B8CE46 /* LKConnecterViewController.m */; };
+		9352988120871FA500B8CE46 /* LKMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352988020871FA500B8CE46 /* LKMineViewController.m */; };
+		935298862087368D00B8CE46 /* SCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935298852087368D00B8CE46 /* SCBaseViewController.m */; };
+		93529889208738AE00B8CE46 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93529888208738AE00B8CE46 /* BaseViewController.m */; };
 		93ABBA222085E20200F1092D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBA212085E20200F1092D /* AppDelegate.m */; };
 		93ABBA252085E20200F1092D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBA242085E20200F1092D /* ViewController.m */; };
 		93ABBA282085E20200F1092D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ABBA262085E20200F1092D /* Main.storyboard */; };
 		93ABBA2A2085E20300F1092D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93ABBA292085E20300F1092D /* Assets.xcassets */; };
 		93ABBA2D2085E20300F1092D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ABBA2B2085E20300F1092D /* LaunchScreen.storyboard */; };
 		93ABBA302085E20300F1092D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBA2F2085E20300F1092D /* main.m */; };
+		BA4ECFC152C8FBE9FDB33633 /* libPods-Link.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7626B990623C50769898BD1 /* libPods-Link.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39EB2AFC255C7E642E3B9CFF /* Pods-Link.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link.release.xcconfig"; path = "Pods/Target Support Files/Pods-Link/Pods-Link.release.xcconfig"; sourceTree = "<group>"; };
+		934D19BA208832FF0023A555 /* KxMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		934D19BB208832FF0023A555 /* KxMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		934D19C020883A100023A555 /* UIImage+SCImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SCImage.h"; sourceTree = "<group>"; };
+		934D19C120883A100023A555 /* UIImage+SCImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SCImage.m"; sourceTree = "<group>"; };
+		934D19C3208841670023A555 /* LKSessionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKSessionViewController.h; sourceTree = "<group>"; };
+		934D19C4208841670023A555 /* LKSessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKSessionViewController.m; sourceTree = "<group>"; };
+		935298632086CEF700B8CE46 /* SCNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCNetwork.h; sourceTree = "<group>"; };
+		935298642086CEF700B8CE46 /* SCNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCNetwork.m; sourceTree = "<group>"; };
+		935298682086D9A000B8CE46 /* LKTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKTabBarController.h; sourceTree = "<group>"; };
+		935298692086D9A000B8CE46 /* LKTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKTabBarController.m; sourceTree = "<group>"; };
+		935298702086DE4800B8CE46 /* LKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKPrefixHeader.pch; sourceTree = "<group>"; };
+		935298722086E82100B8CE46 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		935298762086EEBC00B8CE46 /* LKMessageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKMessageListController.h; sourceTree = "<group>"; };
+		935298772086EEBC00B8CE46 /* LKMessageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKMessageListController.m; sourceTree = "<group>"; };
+		9352987920871F3100B8CE46 /* LKinfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKinfoViewController.h; sourceTree = "<group>"; };
+		9352987A20871F3100B8CE46 /* LKinfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKinfoViewController.m; sourceTree = "<group>"; };
+		9352987C20871F8D00B8CE46 /* LKConnecterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKConnecterViewController.h; sourceTree = "<group>"; };
+		9352987D20871F8D00B8CE46 /* LKConnecterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKConnecterViewController.m; sourceTree = "<group>"; };
+		9352987F20871FA500B8CE46 /* LKMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKMineViewController.h; sourceTree = "<group>"; };
+		9352988020871FA500B8CE46 /* LKMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKMineViewController.m; sourceTree = "<group>"; };
+		935298842087368D00B8CE46 /* SCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBaseViewController.h; sourceTree = "<group>"; };
+		935298852087368D00B8CE46 /* SCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBaseViewController.m; sourceTree = "<group>"; };
+		93529887208738AE00B8CE46 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		93529888208738AE00B8CE46 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		93ABBA1D2085E20200F1092D /* Link.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Link.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93ABBA202085E20200F1092D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93ABBA212085E20200F1092D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +63,8 @@
 		93ABBA2C2085E20300F1092D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93ABBA2E2085E20300F1092D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93ABBA2F2085E20300F1092D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B04729B9670D8F7E61A199BF /* Pods-Link.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Link/Pods-Link.debug.xcconfig"; sourceTree = "<group>"; };
+		B7626B990623C50769898BD1 /* libPods-Link.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Link.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +72,99 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4ECFC152C8FBE9FDB33633 /* libPods-Link.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EF6B01D9C97006345427DDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B04729B9670D8F7E61A199BF /* Pods-Link.debug.xcconfig */,
+				39EB2AFC255C7E642E3B9CFF /* Pods-Link.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		935298672086D61F00B8CE46 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93692B94208979F700E6C098 /* Category */,
+				9352988B20873D9100B8CE46 /* BaseController */,
+				935298832087365B00B8CE46 /* Network */,
+				935298682086D9A000B8CE46 /* LKTabBarController.h */,
+				935298692086D9A000B8CE46 /* LKTabBarController.m */,
+				935298762086EEBC00B8CE46 /* LKMessageListController.h */,
+				935298772086EEBC00B8CE46 /* LKMessageListController.m */,
+				9352987920871F3100B8CE46 /* LKinfoViewController.h */,
+				9352987A20871F3100B8CE46 /* LKinfoViewController.m */,
+				9352987C20871F8D00B8CE46 /* LKConnecterViewController.h */,
+				9352987D20871F8D00B8CE46 /* LKConnecterViewController.m */,
+				9352987F20871FA500B8CE46 /* LKMineViewController.h */,
+				9352988020871FA500B8CE46 /* LKMineViewController.m */,
+				934D19BA208832FF0023A555 /* KxMenu.h */,
+				934D19BB208832FF0023A555 /* KxMenu.m */,
+				934D19C3208841670023A555 /* LKSessionViewController.h */,
+				934D19C4208841670023A555 /* LKSessionViewController.m */,
+				93529882208734EF00B8CE46 /* Tools */,
+				935298712086E7DC00B8CE46 /* Define */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		935298712086E7DC00B8CE46 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				935298722086E82100B8CE46 /* Constants.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		93529882208734EF00B8CE46 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		935298832087365B00B8CE46 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				935298632086CEF700B8CE46 /* SCNetwork.h */,
+				935298642086CEF700B8CE46 /* SCNetwork.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9352988B20873D9100B8CE46 /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				93529887208738AE00B8CE46 /* BaseViewController.h */,
+				93529888208738AE00B8CE46 /* BaseViewController.m */,
+				935298842087368D00B8CE46 /* SCBaseViewController.h */,
+				935298852087368D00B8CE46 /* SCBaseViewController.m */,
+			);
+			path = BaseController;
+			sourceTree = "<group>";
+		};
+		93692B94208979F700E6C098 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				934D19C020883A100023A555 /* UIImage+SCImage.h */,
+				934D19C120883A100023A555 /* UIImage+SCImage.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		93ABBA142085E20200F1092D = {
 			isa = PBXGroup;
 			children = (
 				93ABBA1F2085E20200F1092D /* Link */,
 				93ABBA1E2085E20200F1092D /* Products */,
+				7EF6B01D9C97006345427DDE /* Pods */,
+				A7E5AAAAF4B6053E0A1AA565 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +183,31 @@
 				93ABBA212085E20200F1092D /* AppDelegate.m */,
 				93ABBA232085E20200F1092D /* ViewController.h */,
 				93ABBA242085E20200F1092D /* ViewController.m */,
+				935298702086DE4800B8CE46 /* LKPrefixHeader.pch */,
+				935298672086D61F00B8CE46 /* Classes */,
+				93ABBA2E2085E20300F1092D /* Info.plist */,
+				93ABBA362085EF9F00F1092D /* Sources */,
+			);
+			path = Link;
+			sourceTree = "<group>";
+		};
+		93ABBA362085EF9F00F1092D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				93ABBA262085E20200F1092D /* Main.storyboard */,
 				93ABBA292085E20300F1092D /* Assets.xcassets */,
 				93ABBA2B2085E20300F1092D /* LaunchScreen.storyboard */,
-				93ABBA2E2085E20300F1092D /* Info.plist */,
 				93ABBA2F2085E20300F1092D /* main.m */,
 			);
-			path = Link;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A7E5AAAAF4B6053E0A1AA565 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7626B990623C50769898BD1 /* libPods-Link.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93ABBA332085E20300F1092D /* Build configuration list for PBXNativeTarget "Link" */;
 			buildPhases = (
+				A6AF69CCC88A5A1E631C5220 /* [CP] Check Pods Manifest.lock */,
 				93ABBA192085E20200F1092D /* Sources */,
 				93ABBA1A2085E20200F1092D /* Frameworks */,
 				93ABBA1B2085E20200F1092D /* Resources */,
+				D65CE827B4881EE787D2712D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,14 +277,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A6AF69CCC88A5A1E631C5220 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Link-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D65CE827B4881EE787D2712D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Link/Pods-Link-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Link/Pods-Link-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93ABBA192085E20200F1092D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				93ABBA252085E20200F1092D /* ViewController.m in Sources */,
+				934D19C220883A100023A555 /* UIImage+SCImage.m in Sources */,
+				935298782086EEBC00B8CE46 /* LKMessageListController.m in Sources */,
+				93529889208738AE00B8CE46 /* BaseViewController.m in Sources */,
 				93ABBA302085E20300F1092D /* main.m in Sources */,
+				935298652086CEF700B8CE46 /* SCNetwork.m in Sources */,
+				9352986A2086D9A000B8CE46 /* LKTabBarController.m in Sources */,
+				9352987E20871F8D00B8CE46 /* LKConnecterViewController.m in Sources */,
+				934D19C5208841670023A555 /* LKSessionViewController.m in Sources */,
+				934D19BC208832FF0023A555 /* KxMenu.m in Sources */,
 				93ABBA222085E20200F1092D /* AppDelegate.m in Sources */,
+				935298862087368D00B8CE46 /* SCBaseViewController.m in Sources */,
+				9352988120871FA500B8CE46 /* LKMineViewController.m in Sources */,
+				9352987B20871F3100B8CE46 /* LKinfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +480,13 @@
 		};
 		93ABBA342085E20300F1092D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B04729B9670D8F7E61A199BF /* Pods-Link.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97WVT9AT82;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Link/LKPrefixHeader.pch";
 				INFOPLIST_FILE = Link/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +500,13 @@
 		};
 		93ABBA352085E20300F1092D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39EB2AFC255C7E642E3B9CFF /* Pods-Link.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97WVT9AT82;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Link/LKPrefixHeader.pch";
 				INFOPLIST_FILE = Link/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LKMessageListController.h"
+#import "ViewController.h"
+#import "LKTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:[[LKMessageListController alloc] init]];
+    self.window.rootViewController = navi;
+//    self.window.rootViewController = [[LKTabBarController alloc] init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
