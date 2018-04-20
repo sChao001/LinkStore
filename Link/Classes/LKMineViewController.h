@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LKMineViewController : UIViewController
+@interface LKMineViewController : BaseViewController
 
 @end

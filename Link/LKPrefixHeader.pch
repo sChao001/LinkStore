@@ -9,10 +9,12 @@
 #ifndef LKPrefixHeader_pch
 #define LKPrefixHeader_pch
 
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
+#import "SCNetwork.h"
+#import "Constants.h"
+#import "BaseViewController.h"
+#import "KxMenu.h"
 
-
+#import <RongIMKit/RongIMKit.h>
 
 
 #endif /* LKPrefixHeader_pch */

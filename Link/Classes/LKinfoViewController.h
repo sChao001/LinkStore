@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LKinfoViewController : UIViewController
+@interface LKinfoViewController : BaseViewController
 
 @end

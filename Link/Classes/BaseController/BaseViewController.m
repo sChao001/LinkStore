@@ -28,8 +28,15 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
 }
-//显示导航栏
-- (void)setMyNavigationBarShow
+//显示导航栏颜色
+- (void)setMyNavigationBarOfBackground:(UIColor *)color {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController.navigationBar setBackgroundColor:color];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:17]};
+}
+
+/**显示图片导航栏*/
+- (void)setMyNavigationBarShowOfImage
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"tbg"]forBarMetrics:UIBarMetricsDefault];

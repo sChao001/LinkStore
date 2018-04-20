@@ -8,6 +8,6 @@
 
 #import <RongIMKit/RongIMKit.h>
 
-@interface LKMessageListController : RCConversationListViewController
+@interface LKMessageListController : BaseViewController
 
 @end

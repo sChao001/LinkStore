@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LKConnecterViewController : UIViewController
+@interface LKConnecterViewController : BaseViewController
 
 @end
