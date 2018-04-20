@@ -10,4 +10,5 @@
 
 @interface IMDataSource : NSObject
 
++ (instancetype)sharedInstance;
 @end

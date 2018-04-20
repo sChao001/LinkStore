@@ -10,4 +10,14 @@
 
 @implementation IMDataSource
 
+static IMDataSource *_instance = nil;
+
++ (instancetype)sharedInstance {
+    @synchronized(self){
+        if (_instance == nil) {
+            _instance = [self alloc];
+        }
+        return _instance;
+    }
+}
 @end
