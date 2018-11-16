@@ -31,7 +31,8 @@
 //显示导航栏颜色
 - (void)setMyNavigationBarOfBackground:(UIColor *)color {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self.navigationController.navigationBar setBackgroundColor:color];
+//    [self.navigationController.navigationBar setBackgroundColor:color];
+    [self.navigationController.navigationBar setBarTintColor:color];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:17]};
 }
 
@@ -53,11 +54,12 @@
 - (void)setMyNavigationBarClear
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    //去掉导航栏模糊层
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
     //去掉黑线
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:17]};
-    self.navigationController.navigationBar.translucent = YES;//(导航栏透明)。
+//    self.navigationController.navigationBar.translucent = YES;//(导航栏透明)。
     // 侧滑返回
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }

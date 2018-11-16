@@ -11,100 +11,173 @@
 #import "LKinfoViewController.h"
 #import "LKConnecterViewController.h"
 #import "LKMineViewController.h"
+#import "FrendsListViewController.h"
+#import "mmmmmViewController.h"
+#import "PageViewController.h"
+#import "LKSharedMerchantsController.h"
+#import "PersonOfLabelController.h"
+#import "RCDChatListViewController.h"
 
-@interface LKTabBarController ()
-@property (nonatomic, strong) LKMessageListController *sessionVC;
-@property (nonatomic, strong) LKinfoViewController *infoVC;
+#import "PersonOfHomeController.h"
+#import "PrepareLoginViewController.h"
+#import "SomeOneToLogInController.h"
+
+
+@interface LKTabBarController () <UITabBarControllerDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) LKConnecterViewController *connectVC;
+@property (nonatomic, strong) PageViewController *pageVC;
 @property (nonatomic, strong) LKMineViewController *mineVC;
-
+@property (nonatomic, strong) mmmmmViewController *mmVC;
+@property (nonatomic, strong) LKSharedMerchantsController *merchantsVC;
+@property (nonatomic, strong) PersonOfHomeController *someOneHomeVC;
+@property (nonatomic, strong) PrepareLoginViewController *prepareVC;
+@property (nonatomic, strong) SomeOneToLogInController *someTologVC;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation LKTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UINavigationController *naviOne = [[UINavigationController alloc] initWithRootViewController:self.sessionVC];
-    UINavigationController *naviTwo = [[UINavigationController alloc] initWithRootViewController:self.infoVC];
-    UINavigationController *naviThree = [[UINavigationController alloc] initWithRootViewController:self.connectVC];
+    
+    UINavigationController *naviHuiY = [[UINavigationController alloc] initWithRootViewController:self.merchantsVC];
     UINavigationController *naviFour = [[UINavigationController alloc] initWithRootViewController:self.mineVC];
-    self.viewControllers = @[naviOne, naviTwo, naviThree, naviFour];
-                                      
+    UINavigationController *naviMM = [[UINavigationController alloc] initWithRootViewController:self.mmVC];
+    
+//    UINavigationController *naviToLogin = [[UINavigationController alloc] initWithRootViewController:self.prepareVC]; //游客展示跳转注册登录界面
+    UINavigationController *naviSomeTologin = [[UINavigationController alloc] initWithRootViewController:self.someTologVC];
+    self.viewControllers = @[naviHuiY, naviSomeTologin, naviFour];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor], NSFontAttributeName : [UIFont systemFontOfSize:13]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor], NSFontAttributeName : [UIFont systemFontOfSize:13]} forState:UIControlStateSelected];
+    [self setSelectedTitleColor:[UIColor blackColor]];
+    self.delegate = self;
+    //未读消息红点
+    if ([[RCIMClient sharedRCIMClient] getTotalUnreadCount] > 0) {
+        naviMM.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [[RCIMClient sharedRCIMClient] getTotalUnreadCount]];
+    }else {
+        naviMM.tabBarItem.badgeValue = nil;
+    }
+
+    if ([UserDefault boolForKey:@"SecondLogin"]) {
+        //监听通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reciveRedBadgeValue:) name:@"receiveRedBadgeValue" object:nil];
+    }
+//    [self creatMyWelcomeView];
+    
 }
 
-- (LKMessageListController *)sessionVC {
-    if (!_sessionVC) {
-        _sessionVC = [[LKMessageListController alloc] init];
-        _sessionVC.title = @"会话";
-//        [_sessionVC.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObject:[[CYTabBarConfig shared] textColor] forKey:NSForegroundColorAttributeName] forState:UIControlStateNormal];
+- (mmmmmViewController *)mmVC {
+    if (!_mmVC) {
+        _mmVC = [[mmmmmViewController alloc] init];
+        _mmVC.title = @"消息";
+        //tabbarOne
+        _mmVC.tabBarItem.image = [[UIImage imageNamed:@"t_message"]    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _mmVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_messageS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    return _mmVC;
+}
+//- (PrepareLoginViewController *)prepareVC {
+//    if (!_prepareVC) {
+//        _prepareVC = [[PrepareLoginViewController alloc] init];
+//        _prepareVC.title = @"消息";
+//        _prepareVC.tabBarItem.image = [[UIImage imageNamed:@"t_message"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        _prepareVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_messageS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //
-//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-//                                                           [UIColor redColor], NSForegroundColorAttributeName,
-//                                                           nil] forState:UIControlStateNormal];
+//    }
+//    return _prepareVC;
+//}
+- (LKSharedMerchantsController *)merchantsVC {
+    if (!_merchantsVC) {
+        _merchantsVC = [[LKSharedMerchantsController alloc] init];
+        _merchantsVC.title = @"活动";
+        _merchantsVC.tabBarItem.image = [[UIImage imageNamed:@"t_huodong"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _merchantsVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_huodongS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
-    return _sessionVC;
+    return _merchantsVC;
 }
-
-- (LKinfoViewController *)infoVC {
-    if (!_infoVC) {
-        _infoVC = [[LKinfoViewController alloc] init];
-        _infoVC.title = @"资讯";
-        
+- (PersonOfHomeController *)someOneHomeVC {
+    if (!_someOneHomeVC) {
+        _someOneHomeVC = [[PersonOfHomeController alloc] init];
+        _someOneHomeVC.title = @"有人";
+        _someOneHomeVC.tabBarItem.image = [[UIImage imageNamed:@"t_youren"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _someOneHomeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_yourenS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
-    return _infoVC;
+    return _someOneHomeVC;
+}
+- (SomeOneToLogInController *)someTologVC {
+    if (!_someTologVC) {
+        _someTologVC = [[SomeOneToLogInController alloc] init];
+        _someTologVC.title = @"有人";
+        _someTologVC.tabBarItem.image = [[UIImage imageNamed:@"t_youren"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _someTologVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_yourenS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    return _someTologVC;
 }
 
 - (LKConnecterViewController *)connectVC {
     if (!_connectVC) {
         _connectVC = [[LKConnecterViewController alloc] init];
-        _connectVC.title = @"位置";
+        _connectVC.title = @"知道";
+        _connectVC.tabBarItem.image = [[UIImage imageNamed:@"t_zhidao"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _connectVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_zhidaoS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     return _connectVC;
+}
+
+- (PageViewController *)pageVC {
+    if (!_pageVC) {
+        _pageVC = [[PageViewController alloc] init];
+        _pageVC.title = @"知道";
+        _pageVC.tabBarItem.image = [[UIImage imageNamed:@"t_zhidao"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _pageVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_zhidaoS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    return _pageVC;
 }
 
 - (LKMineViewController *)mineVC {
     if (!_mineVC) {
         _mineVC = [[LKMineViewController alloc] init];
         _mineVC.title = @"我";
+        _mineVC.tabBarItem.image = [[UIImage imageNamed:@"t_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _mineVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_meS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     return _mineVC;
 }
 
-- (void)setTabBarItems {
-    [self.viewControllers
-     enumerateObjectsUsingBlock:^(__kindof UIViewController *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
-         if ([obj isKindOfClass:[LKMessageListController class]]) {
-             obj.tabBarItem.title = @"会话";
-             obj.tabBarItem.image =
-             [[UIImage imageNamed:@"icon_chat"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-             obj.tabBarItem.selectedImage =
-             [[UIImage imageNamed:@"icon_chat_hover"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-         } else if ([obj isKindOfClass:[LKinfoViewController class]]) {
-             obj.tabBarItem.title = @"通讯录";
-             obj.tabBarItem.image =
-             [[UIImage imageNamed:@"contact_icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-             obj.tabBarItem.selectedImage = [[UIImage imageNamed:@"contact_icon_hover"]
-                                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-         } else if ([obj isKindOfClass:[LKConnecterViewController class]]) {
-             obj.tabBarItem.title = @"发现";
-             obj.tabBarItem.image =
-             [[UIImage imageNamed:@"square"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-             obj.tabBarItem.selectedImage =
-             [[UIImage imageNamed:@"square_hover"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-         } else if ([obj isKindOfClass:[LKMineViewController class]]) {
-             obj.tabBarItem.title = @"我";
-             obj.tabBarItem.image =
-             [[UIImage imageNamed:@"icon_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-             obj.tabBarItem.selectedImage =
-             [[UIImage imageNamed:@"icon_me_hover"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-         } else {
-             NSLog(@"Unknown TabBarController");
-         }
-     }];
+- (void)reciveRedBadgeValue:(NSNotification *)notification {
+//    NSDictionary *dic = notification.userInfo;
+//    NSLog(@"%@", dic);
+//    UIViewController *redVC = [self.viewControllers objectAtIndex:2];
+//    [[RCIMClient sharedRCIMClient] getTotalUnreadCount];
+//    NSLog(@"红点%d", [[RCIMClient sharedRCIMClient] getTotalUnreadCount]);
+//    if ([[RCIMClient sharedRCIMClient] getTotalUnreadCount] == 0) {
+//        redVC.tabBarItem.badgeValue = nil;
+//    }else {
+//        redVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [[RCIMClient sharedRCIMClient] getTotalUnreadCount]];
+//    }
+    
 }
+ 
+- (void)setSelectedTitleColor:(UIColor *)color {
+    //选中字体颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : color} forState:UIControlStateSelected];
+}
+    
+#pragma mark - UITabarControllerDelegate
 
-
-
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSLog(@"%@", item.title);
+//    if ([item.title isEqualToString:@"活动"]) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"itemClickLoad" object:nil];
+//    }
+//    if ([item.title isEqualToString:@"有人"]) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"threeItemClickLoad" object:nil];
+//    }
+}
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 

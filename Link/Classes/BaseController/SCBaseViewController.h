@@ -25,19 +25,24 @@
 /**
  * 返回按钮点击事件，子类可重写
  */
-//- (void)leftBarItemBack;
+- (void)leftBarItemBack;
 
 
 /**设置导航栏隐藏*/
 - (void)setMyNavigationBarHidden;
-/**设置导航栏显示*/
-- (void)setMyNavigationBarShow;
+/**设置导航栏背景颜色*/
+- (void)setMyNavigationBarOfBackground:(UIColor *)color;
+/**设置图片导航栏*/
+- (void)setMyNavigationBarShowOfImage;
 /**显示导航栏为纯透明*/
 - (void)setMyNavigationBarClear;
 
 /**跳转到子界面*/
 - (void)pushChildVC:(UIViewController *)vc animated:(BOOL)animated;
 
-
+/**创建提示语*/
+- (void)creatMyAlertlabel;
+/**展示提示语*/
+- (void)alertShowWithTitle:(NSString *)title;
 
 @end

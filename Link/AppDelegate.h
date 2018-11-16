@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AppDelegateOfDelegate <NSObject>
+- (void)successDinDanView:(NSDictionary *)result;
+@end
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, weak) id<AppDelegateOfDelegate> appDelegate;
 
 @end
 
