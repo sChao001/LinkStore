@@ -21,6 +21,7 @@
 #import "PersonOfHomeController.h"
 #import "PrepareLoginViewController.h"
 #import "SomeOneToLogInController.h"
+#import "ArticleViewController.h"
 
 
 @interface LKTabBarController () <UITabBarControllerDelegate, UIScrollViewDelegate>
@@ -32,6 +33,7 @@
 @property (nonatomic, strong) PersonOfHomeController *someOneHomeVC;
 @property (nonatomic, strong) PrepareLoginViewController *prepareVC;
 @property (nonatomic, strong) SomeOneToLogInController *someTologVC;
+@property (nonatomic, strong) ArticleViewController *articleVC;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
@@ -46,7 +48,8 @@
     
 //    UINavigationController *naviToLogin = [[UINavigationController alloc] initWithRootViewController:self.prepareVC]; //游客展示跳转注册登录界面
     UINavigationController *naviSomeTologin = [[UINavigationController alloc] initWithRootViewController:self.someTologVC];
-    self.viewControllers = @[naviHuiY, naviSomeTologin, naviFour];
+    UINavigationController *navArticle = [[UINavigationController alloc] initWithRootViewController:self.articleVC];
+    self.viewControllers = @[naviHuiY, navArticle, naviSomeTologin, naviFour];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor], NSFontAttributeName : [UIFont systemFontOfSize:13]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor], NSFontAttributeName : [UIFont systemFontOfSize:13]} forState:UIControlStateSelected];
@@ -144,7 +147,15 @@
     }
     return _mineVC;
 }
-
+- (ArticleViewController *)articleVC {
+    if (!_articleVC) {
+        _articleVC = [[ArticleViewController alloc] init];
+        _articleVC.title = @"知道";
+        _articleVC.tabBarItem.image = [[UIImage imageNamed:@"t_zhidao"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _articleVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_zhidaoS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    return _articleVC;
+}
 - (void)reciveRedBadgeValue:(NSNotification *)notification {
 //    NSDictionary *dic = notification.userInfo;
 //    NSLog(@"%@", dic);

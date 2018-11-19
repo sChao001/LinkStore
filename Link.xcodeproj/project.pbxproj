@@ -331,6 +331,8 @@
 		936BE941210EE1620067AE6D /* UIImage+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 936BE940210EE1620067AE6D /* UIImage+CustomColor.m */; };
 		936F7474212FDC820003560E /* ReportInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936F7473212FDC820003560E /* ReportInfoViewController.m */; };
 		936F7477212FDFA70003560E /* ReportInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 936F7476212FDFA70003560E /* ReportInfoCell.m */; };
+		937053D021A29D1C0010EC4A /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937053CF21A29D1C0010EC4A /* ArticleViewController.m */; };
+		937053D321A2A0130010EC4A /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 937053D221A2A0130010EC4A /* ArticleModel.m */; };
 		937131C620BE3AF4009CA457 /* EditIdentifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 937131C520BE3AF4009CA457 /* EditIdentifyCell.m */; };
 		937131C920BE3FFE009CA457 /* EditDetailInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937131C820BE3FFE009CA457 /* EditDetailInfoController.m */; };
 		937131CD20BE7FA1009CA457 /* SubIdentifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 937131CC20BE7FA1009CA457 /* SubIdentifyModel.m */; };
@@ -1006,6 +1008,10 @@
 		936F7473212FDC820003560E /* ReportInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportInfoViewController.m; sourceTree = "<group>"; };
 		936F7475212FDFA70003560E /* ReportInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportInfoCell.h; sourceTree = "<group>"; };
 		936F7476212FDFA70003560E /* ReportInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportInfoCell.m; sourceTree = "<group>"; };
+		937053CE21A29D1C0010EC4A /* ArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		937053CF21A29D1C0010EC4A /* ArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
+		937053D121A2A0130010EC4A /* ArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
+		937053D221A2A0130010EC4A /* ArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
 		937131C420BE3AF4009CA457 /* EditIdentifyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditIdentifyCell.h; sourceTree = "<group>"; };
 		937131C520BE3AF4009CA457 /* EditIdentifyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditIdentifyCell.m; sourceTree = "<group>"; };
 		937131C720BE3FFE009CA457 /* EditDetailInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditDetailInfoController.h; sourceTree = "<group>"; };
@@ -1621,6 +1627,10 @@
 				93541AF620DC8A22007ED08A /* MyChannelViewController.m */,
 				93541AF820DC990B007ED08A /* AddSignModel.h */,
 				93541AF920DC990B007ED08A /* AddSignModel.m */,
+				937053CE21A29D1C0010EC4A /* ArticleViewController.h */,
+				937053CF21A29D1C0010EC4A /* ArticleViewController.m */,
+				937053D121A2A0130010EC4A /* ArticleModel.h */,
+				937053D221A2A0130010EC4A /* ArticleModel.m */,
 			);
 			path = KnowInfo;
 			sourceTree = "<group>";
@@ -2580,6 +2590,7 @@
 				934FE7A220C29C9400A978C5 /* PersonQRCodeViewController.m in Sources */,
 				9371823820D8F05700116CE0 /* NewsTitleCell.m in Sources */,
 				9345FB6120E3842A00353AB0 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
+				937053D321A2A0130010EC4A /* ArticleModel.m in Sources */,
 				9358062A21421EBF00B26C7C /* LKMyTabBarController.m in Sources */,
 				9345FA4A20E380E100353AB0 /* UIView+Layout.m in Sources */,
 				93572D9220AD55320085858C /* ListViewCell.m in Sources */,
@@ -2623,6 +2634,7 @@
 				936241DC20B513B400E849BD /* PersonModel.m in Sources */,
 				934439D1208EC34F008C9D7D /* CallKitExtensionModule.m in Sources */,
 				935FEE0D20B3E97700B086BE /* LKGroupSetViewController.m in Sources */,
+				937053D021A29D1C0010EC4A /* ArticleViewController.m in Sources */,
 				9345FB4B20E3842A00353AB0 /* RACScopedDisposable.m in Sources */,
 				936241E120B513ED00E849BD /* CollectionViewCell.m in Sources */,
 				9345FB5F20E3842A00353AB0 /* UIActionSheet+RACSignalSupport.m in Sources */,

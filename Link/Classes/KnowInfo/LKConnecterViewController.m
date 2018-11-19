@@ -74,7 +74,7 @@
 
 - (void)requestMessageContentOfData {
     NSLog(@"%@", _signString);
-    NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid, @"labelName" : @"推荐", @"pageNo" : [NSString stringWithFormat:@"%d", _pageNumber], @"pageSize" : @"10"};
+    NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid, @"labelName" : _signString, @"pageNo" : [NSString stringWithFormat:@"%d", _pageNumber], @"pageSize" : @"10"};
     [SCNetwork postWithURLString:BDUrl_s(@"news/getNewsList") parameters:paramet success:^(NSDictionary *dic) {
         NSLog(@"%@", dic);
         if (self.pageNumber == 1) {
@@ -88,19 +88,6 @@
         }
         [self.listNewsTableView reloadData];
         [self endRefresh];
-    } failure:^(NSError *error) {
-        [SVProgressHUD showWithStatus:@"网络连接失败，检查网络"];
-        [SVProgressHUD dismissWithDelay:0.7];
-        [self endRefresh];
-    }];
-}
-
-- (void)requestChangeMessageData {
-    NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid, @"pageNo" : [NSString stringWithFormat:@"%d", _pageNumber]};
-    [SCNetwork postWithURLString:BDUrl_s(@"knownews/getKnowNewsList") parameters:paramet success:^(NSDictionary *dic) {
-        if (self.pageNumber == 1) {
-            [self.dataArray removeAllObjects];
-        }
     } failure:^(NSError *error) {
         [SVProgressHUD showWithStatus:@"网络连接失败，检查网络"];
         [SVProgressHUD dismissWithDelay:0.7];

@@ -22,6 +22,7 @@
 #import "PrepareLoginViewController.h"
 #import "SomeOneToLogInController.h"
 #import "StoreingViewController.h"
+#import "ArticleViewController.h"
 
 
 @interface LKMyTabBarController () <UITabBarControllerDelegate>
@@ -34,6 +35,7 @@
 @property (nonatomic, strong) PrepareLoginViewController *prepareVC;
 @property (nonatomic, strong) SomeOneToLogInController *someTologVC;
 @property (nonatomic, strong) StoreingViewController *storeVC;
+@property (nonatomic, strong) ArticleViewController *articleVC;
 @end
 
 @implementation LKMyTabBarController
@@ -47,8 +49,9 @@
     UINavigationController *naviStore = [[UINavigationController alloc] initWithRootViewController:self.storeVC];
 //    UINavigationController *naaaa = [[UINavigationController alloc] initWithRootViewController:self.pageVC];
     UINavigationController *navConnectVC = [[UINavigationController alloc] initWithRootViewController:self.connectVC];
+    UINavigationController *naviArticle = [[UINavigationController alloc] initWithRootViewController:self.articleVC];
     
-    self.viewControllers = @[naviHuiY, navConnectVC, naviStore, naviFour];
+    self.viewControllers = @[naviHuiY, naviArticle, naviStore, naviFour];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor], NSFontAttributeName : [UIFont systemFontOfSize:13]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor], NSFontAttributeName : [UIFont systemFontOfSize:13]} forState:UIControlStateSelected];
@@ -168,6 +171,15 @@
         _storeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"T_storeingS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     return _storeVC;
+}
+- (ArticleViewController *)articleVC {
+    if (!_articleVC) {
+        _articleVC = [[ArticleViewController alloc] init];
+        _articleVC.title = @"文章";
+        _articleVC.tabBarItem.image = [[UIImage imageNamed:@"t_zhidao"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        _articleVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"t_zhidaoS"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    return _articleVC;
 }
 - (void)reciveRedBadgeValue:(NSNotification *)notification {
 //    NSDictionary *dic = notification.userInfo;
