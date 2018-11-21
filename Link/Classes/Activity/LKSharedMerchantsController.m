@@ -69,7 +69,7 @@
 //    [self getLocation];
     [self creatMyAlertlabel];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.delegate = self;
+//    self.navigationController.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotificationAndLoad) name:@"itemClickLoad" object:nil];
 
     self.title = @"活动";
@@ -335,12 +335,12 @@
     }
 }
 
-#pragma mark - UINavigationControllerDelegate
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    BOOL isShowPersonPage = [viewController isKindOfClass:[self class]];
-    [self.navigationController setNavigationBarHidden:isShowPersonPage];
-    
-}
+//#pragma mark - UINavigationControllerDelegate
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    BOOL isShowPersonPage = [viewController isKindOfClass:[self class]];
+//    [self.navigationController setNavigationBarHidden:isShowPersonPage];
+//
+//}
 
 - (void)requestGetData:(NSString *)stringUrl {
     NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid};
@@ -366,12 +366,7 @@
 //        [locationmanager startUpdatingLocation];
 //    }
 //}
-#pragma mark CoreLocation delegate (定位失败)
-//定位失败后调用此代理方法
-//-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-//{
-//
-//}
+
 
 #pragma mark 定位成功后则执行此代理方法
 //-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
@@ -420,18 +415,7 @@
 //    }];
 //}
 
-////检查会员
-//- (void)requsetHUiYuanData {
-//    NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid};
-//    [SCNetwork postWithURLString:BDUrl_s(@"generalizewelfare/checkGw") parameters:paramet success:^(NSDictionary *dic) {
-//        if ([dic[@"code"] integerValue] > 0) {
-//            self.tanView.hidden = NO;
-//        }
-//    } failure:^(NSError *error) {
-//        [SVProgressHUD showWithStatus:@"网络连接失败"];
-//        [SVProgressHUD dismissWithDelay:0.7];
-//    }];
-//}
+
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

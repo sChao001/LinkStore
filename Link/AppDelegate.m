@@ -98,6 +98,7 @@
     NSLog(@"%.3f", time);
     
     _starTimeStr = [NSString stringWithFormat:@"%.0f", time*1000];
+    
     return YES;
 }
 
@@ -269,14 +270,18 @@
 }
 
 - (void)requestUserStayTimeInApp {
-    NSLog(@"%@==%@", _starTimeStr, _endTimeStr);
-    NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid, @"startTime" : _starTimeStr, @"endTime" : _endTimeStr};
-    [SCNetwork postWithURLString:BDUrl_s(@"log/recordLog") parameters:paramet success:^(NSDictionary *dic) {
-
-    } failure:^(NSError *error) {
-        [SVProgressHUD showWithStatus:@"网络请求失败"];
-        [SVProgressHUD dismissWithDelay:0.7];
-    }];
+//    NSLog(@"%@==%@", _starTimeStr, _endTimeStr);
+    if (![CommentTool isBlankString:[UserInfo sharedInstance].getUserid]) {
+        NSDictionary *paramet = @{@"sign" : BD_MD5Sign.md5String, @"userId" : [UserInfo sharedInstance].getUserid, @"startTime" : _starTimeStr, @"endTime" : _endTimeStr};
+        [SCNetwork postWithURLString:BDUrl_s(@"log/recordLog") parameters:paramet success:^(NSDictionary *dic) {
+            
+        } failure:^(NSError *error) {
+            [SVProgressHUD showWithStatus:@"网络请求失败"];
+            [SVProgressHUD dismissWithDelay:0.7];
+        }];
+    }
+    
+    
 }
 
 - (void)getLocalTimeStamp {

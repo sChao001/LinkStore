@@ -12,6 +12,7 @@
 #import "GroupListModel.h"
 #import "LKTabBarController.h"
 #import "GuideViewController.h"
+#import "LaunchADViewController.h"
 
 
 @implementation AppDelegate (LogIn)
@@ -35,19 +36,8 @@
         self.window.rootViewController = [[GuideViewController alloc] init];
         [self.window makeKeyAndVisible];
     }else {
-        if (![UserDefault boolForKey:@"SecondLogin"]) {
-            //LoginViewController
-            //        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
-            //        self.window.rootViewController = navi;
-            self.window.rootViewController = [[LKTabBarController alloc] init];
-            [self.window makeKeyAndVisible];
-        }else {
-//            FakeLaunchViewController *launchVC = [[FakeLaunchViewController alloc] init];
-//            self.window.rootViewController = launchVC;
-//            [self.window makeKeyAndVisible];
-            self.window.rootViewController = [[LKMyTabBarController alloc] init];
-            [self.window makeKeyAndVisible];
-        }
+        self.window.rootViewController = [[LaunchADViewController alloc] init];
+        [self.window makeKeyAndVisible];
     }
     
 }

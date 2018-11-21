@@ -26,7 +26,7 @@
 #pragma mark - 生命周期
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setMyNavigationBarShowOfImage];
+//    [self setMyNavigationBarShowOfImage];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"action"];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"member"];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"line"];
@@ -35,6 +35,8 @@
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"hint"];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"inviteFriends"];
     [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"contactBusiness"];
+    [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"topUp"];
+    [self.webView.configuration.userContentController addScriptMessageHandler:self name:@"returnUpPage"];
     
 }
 
@@ -51,6 +53,8 @@
     [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"contactBusiness"];
     //
     [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"pay"];
+    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"topUp"];
+    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"returnUpPage"];
 }
 
 - (void)viewDidLoad {
@@ -60,7 +64,7 @@
     [self creatMyAlertlabel];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    [self setCommonLeftBarButtonItem];
+//    [self setCommonLeftBarButtonItem];
     [self configWebViewLayout];
 //    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, LK_iPhoneXNavHeight)];
 //    [self.view addSubview:topView];
@@ -73,7 +77,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)configWebViewLayout {
-    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, LK_iPhoneXNavHeight, ScreenW, ScreenH - LK_TabbarSafeBottomMargin-LK_iPhoneXNavHeight)];
+    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH - LK_TabbarSafeBottomMargin)];
     [self.view addSubview:_webView];
     _webView.navigationDelegate = self;
     _webView.scrollView.bounces = NO;
@@ -210,7 +214,77 @@
 //            [self toWeChatPayOfShop:message.body[@"shopId"] totalFee:message.body[@"totalFee"] activityId:message.body[@"activityId"] deductionMoney:message.body[@"deductionMoney"] deductionType:@"2"];
 //        }
     }
+    if ([message.name isEqualToString:@"topUp"]) {
+        NSLog(@"%@", message.body);
+        NSLog(@"%@", message.body[@"type"]);
+        if ([message.body[@"type"] isEqualToString:@"1"]) {
+            [self congZhiOfAlipay:message.body[@"money"] shopId:message.body[@"shopId"]];
+        }else {
+            [self chongZhiOfWeChat:message.body[@"money"] shopId:message.body[@"shopId"]];
+        }
+    }
+    if ([message.name isEqualToString:@"returnUpPage"]) {
+        NSLog(@"%@", message.body);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
+
+//充值
+- (void)congZhiOfAlipay:(NSString *)totalFee shopId:(NSString *)shopId {
+    NSDictionary *paramet = @{@"userId" : [UserInfo sharedInstance].getUserid, @"sign" : BD_MD5Sign.md5String, @"total_fee" : totalFee, @"shopId" : shopId};
+    [SCNetwork postWithURLString:BDUrl_s(@"alipay/topUp") parameters:paramet success:^(NSDictionary *dic) {
+        if ([dic[@"code"] integerValue] >0) {
+            NSString *appScheme = @"alisdkSurdot";
+            [[AlipaySDK defaultService] payOrder:dic[@"info"] fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@", resultDic);
+                
+//                if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
+//                    NSError *error;
+//                    // 将json字符串转换成字典
+//                    NSData * getJsonData = [resultDic[@"result"] dataUsingEncoding:NSUTF8StringEncoding];
+//                    NSDictionary *getDic = [NSJSONSerialization JSONObjectWithData:getJsonData options:NSJSONReadingMutableContainers error:&error];
+//                    
+//                    self.zhiFuTime.text = [NSString stringWithFormat:@"支付时间：%@", getDic[@"alipay_trade_app_pay_response"][@"timestamp"]];
+//                    self.dinDanLb.text = [NSString stringWithFormat:@"订单编号：%@", getDic[@"alipay_trade_app_pay_response"][@"out_trade_no"]];
+//                    self.successView.hidden = NO;
+//                }
+            }];
+        }
+    } failure:^(NSError *error) {
+        [SVProgressHUD showWithStatus:@"网络请求失败"];
+        [SVProgressHUD dismissWithDelay:0.7];
+    }];
+}
+
+//微信充值
+- (void)chongZhiOfWeChat:(NSString *)totalFee shopId:(NSString *)shopId {
+    NSDictionary *paramet = @{@"userId" : [UserInfo sharedInstance].getUserid, @"sign" : BD_MD5Sign.md5String, @"total_fee" : totalFee, @"shopId" : shopId};
+    [SCNetwork postWithURLString:BDUrl_s(@"weixinpay/weixinTopUp") parameters:paramet success:^(NSDictionary *dic) {
+        if ([dic[@"code"] integerValue] > 0) {
+            [self wechatPay:dic[@"iosInfo"]];
+        }
+    } failure:^(NSError *error) {
+        [SVProgressHUD showWithStatus:@"网络请求失败"];
+        [SVProgressHUD dismissWithDelay:0.7];
+    }];
+}
+
+// 微信支付
+-(void)wechatPay:(NSDictionary *)dict{
+    PayReq *req             = [[PayReq alloc]init];
+    req.partnerId           = dict[@"partnerid"];
+    req.prepayId            = dict[@"prepayid"];
+    req.nonceStr            = dict[@"noncestr"];
+    req.timeStamp           = [dict[@"timestamp"] intValue];
+    req.package             = dict[@"package"];
+    req.sign                = dict[@"sign"];
+    
+    [WXApi sendReq:req];
+}
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

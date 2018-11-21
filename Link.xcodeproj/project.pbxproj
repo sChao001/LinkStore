@@ -186,6 +186,7 @@
 		9347DA6120D1FEE0005E44CD /* KnowHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9347DA6020D1FEE0005E44CD /* KnowHomeViewController.m */; };
 		9347DA8C20D24451005E44CD /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9347DA8B20D24451005E44CD /* PageViewController.m */; };
 		9347DA8F20D24D42005E44CD /* SignTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9347DA8E20D24D42005E44CD /* SignTypeModel.m */; };
+		9348432D21A52EE3008A4C00 /* LaunchADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9348432C21A52EE3008A4C00 /* LaunchADViewController.m */; };
 		9348DC8A20DA00AC00FAA292 /* ChooseedSignController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9348DC8920DA00AC00FAA292 /* ChooseedSignController.m */; };
 		9348DC8D20DA2CC300FAA292 /* ChooseedSignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9348DC8C20DA2CC300FAA292 /* ChooseedSignCell.m */; };
 		93494DC720FD8FE000242E91 /* FSLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93494DC620FD8FE000242E91 /* FSLabelModel.m */; };
@@ -719,6 +720,8 @@
 		9347DA8B20D24451005E44CD /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		9347DA8D20D24D42005E44CD /* SignTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignTypeModel.h; sourceTree = "<group>"; };
 		9347DA8E20D24D42005E44CD /* SignTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignTypeModel.m; sourceTree = "<group>"; };
+		9348432B21A52EE3008A4C00 /* LaunchADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchADViewController.h; sourceTree = "<group>"; };
+		9348432C21A52EE3008A4C00 /* LaunchADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchADViewController.m; sourceTree = "<group>"; };
 		9348DC8820DA00AC00FAA292 /* ChooseedSignController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseedSignController.h; sourceTree = "<group>"; };
 		9348DC8920DA00AC00FAA292 /* ChooseedSignController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseedSignController.m; sourceTree = "<group>"; };
 		9348DC8B20DA2CC300FAA292 /* ChooseedSignCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseedSignCell.h; sourceTree = "<group>"; };
@@ -2319,6 +2322,8 @@
 				93ABBA242085E20200F1092D /* ViewController.m */,
 				93666D0620C7E406006C1AB6 /* FakeLaunchViewController.h */,
 				93666D0720C7E406006C1AB6 /* FakeLaunchViewController.m */,
+				9348432B21A52EE3008A4C00 /* LaunchADViewController.h */,
+				9348432C21A52EE3008A4C00 /* LaunchADViewController.m */,
 				935298702086DE4800B8CE46 /* LKPrefixHeader.pch */,
 				933C2C922149FB0000502AC1 /* Guides */,
 				934562AC2114220E00899928 /* AppDelegateCategory */,
@@ -2858,6 +2863,7 @@
 				9345FB6D20E3842A00353AB0 /* UISwitch+RACSignalSupport.m in Sources */,
 				93624B4820B2B2A3007B7E31 /* SearchAndAddFriendController.m in Sources */,
 				9352987B20871F3100B8CE46 /* LKinfoViewController.m in Sources */,
+				9348432D21A52EE3008A4C00 /* LaunchADViewController.m in Sources */,
 				93715C2620FC64CC00973C86 /* PartOflLabelsController.m in Sources */,
 				9360A56D2123D5D800CE6F5E /* MembersCenterViewController.m in Sources */,
 				93715C3920FC940E00973C86 /* FSPageContentView.m in Sources */,

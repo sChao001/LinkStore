@@ -28,7 +28,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     //    self.navigationController.navigationBar.translucent = YES;//(导航栏半透明)。左边原点为（0,0）
     // 侧滑返回
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+//    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
 }
 //显示导航栏颜色
@@ -55,7 +55,7 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:RGB(28, 28, 28),NSFontAttributeName:[UIFont boldSystemFontOfSize:17]};
     self.navigationController.navigationBar.translucent = YES;// //translucent 为NO时(导航栏不透明)。左边原点为（0,64） translucent 为YES时，左边原点为 （0，0）
     // 侧滑返回
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+//    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
 //显示导航栏为纯透明
@@ -68,7 +68,7 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:17]};
     self.navigationController.navigationBar.translucent = YES;//(导航栏透明)。
     // 侧滑返回
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+//    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 /**
  * 设置左侧按钮
